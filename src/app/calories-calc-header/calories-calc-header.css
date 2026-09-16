@@ -1,0 +1,70 @@
+.app-header {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--border, #1c3a5e);
+  box-shadow: 0 8px 24px var(--shadow, rgba(0, 0, 0, 0.6));
+}
+
+
+
+.app-container h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text, #e6edf3);
+  text-align: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.3px;
+}
+.header-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.app-container {
+  text-align: center;
+  margin: 30px 0 20px 0;
+}
+
+/* تنسيق العنوان الرئيسي */
+.calculator-title {
+  font-size: 2.2rem;               /* حجم أكبر وأوضح */
+  font-weight: 800;
+  color: var(--text, #ffffff);
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 102, 255, 0.2);
+}
+
+/* التدرج اللوني للكلمات الرئيسية BMR & TDEE */
+.calculator-title .highlight {
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 50%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  
+  /* توهج خفيف باللون الأزرق لتعزيز المظهر العسكري/الرياضي الحديث */
+  filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.4));
+}
+
+/* خط تزييني سفلي رفيع يضفي لمسة احترافية */
+.calculator-title::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 3px;
+  margin: 10px auto 0 auto;
+  background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+.svg-container {
+  width: 90%;           /* أخذ مساحة واسعة من الشاشة */
+  max-width: 1200px;    /* التمدد حتى 1200px */
+  margin: 0 auto;       /* التوسيط في المنتصف */
+}

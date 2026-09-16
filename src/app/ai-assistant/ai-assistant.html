@@ -1,0 +1,8 @@
+<section class="assistant-card" id="ai-coach">
+  <div class="assistant-heading"><div><p class="eyebrow">AI FITNESS ASSISTANT</p><h2>Your plan, made more useful</h2><p>Ask about meals, training, recovery, and your calorie target.</p></div><span class="ai-badge">AI Coach</span></div>
+  <div class="suggestions">@for (suggestion of suggestions; track suggestion) { <button (click)="ask(suggestion)" [disabled]="loading()">{{ suggestion }}</button> }</div>
+  <div class="messages" aria-live="polite">@for (message of messages(); track $index) { <article class="message" [class.user]="message.role === 'user'"><span>{{ message.role === 'assistant' ? 'Coach' : 'You' }}</span><p>{{ message.text }}</p></article> } @if (loading()) { <article class="message"><span>Coach</span><p>Thinking about your plan...</p></article> }</div>
+  @if (error()) { <p class="assistant-error">{{ error() }}</p> }
+  <form class="assistant-form" (ngSubmit)="ask()"><input name="question" [(ngModel)]="question" maxlength="1000" placeholder="Example: I have 2200 calories, what can I eat today?" [disabled]="loading()"><button type="submit" [disabled]="loading() || !question.trim()">Send</button></form>
+  <p class="assistant-note">General fitness guidance only. For injuries, medical conditions, or eating-disorder concerns, speak with a qualified professional.</p>
+</section>

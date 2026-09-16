@@ -1,0 +1,8 @@
+<main [class.light-theme]="!isDark()">
+  <button class="theme-toggle" (click)="toggleTheme()" [attr.aria-label]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'">{{ isDark() ? 'Light mode' : 'Dark mode' }}</button>
+  <app-calories-calc></app-calories-calc>
+  <app-dashboard></app-dashboard>
+  <app-ai-assistant></app-ai-assistant>
+  <div id="calculator"><app-user-calc (submit)="onUserSubmit($event)"></app-user-calc></div>
+  @if (userData) { <app-output></app-output> }
+</main>

@@ -1,0 +1,20 @@
+<section class="results-card" id="result-card">
+  <div class="result-heading">
+    <div><p class="eyebrow">YOUR PLAN IS READY</p><h2>{{ results().recommendedCalories | number:'1.0-0' }} kcal <small>/ day</small></h2><span class="goal-pill">{{ goalTitle() }}</span></div>
+    <div class="export-actions"><button (click)="exportImage()">Download image</button><button (click)="exportPdf()">Save as PDF</button></div>
+  </div>
+  <div class="focus-card"><span class="focus-icon">TODAY'S FOCUS</span><p>{{ goalTip() }}</p></div>
+  <div class="results-grid">
+    <div class="result-item"><span class="label">BMR</span><span class="value">{{ results().bmr | number:'1.0-0' }}</span><small>At complete rest</small></div>
+    <div class="result-item"><span class="label">TDEE</span><span class="value">{{ results().tdee | number:'1.0-0' }}</span><small>To maintain weight</small></div>
+    <div class="result-item"><span class="label">Activity</span><span class="value">{{ results().activityMultiplier | number:'1.2-2' }}x</span><small>Based on your routine</small></div>
+  </div>
+  <div class="section"><div class="section-title"><h3>Macro breakdown</h3><span>Built for {{ userData().goal }}</span></div><div class="macro-grid"><div class="macro protein"><b>{{ results().macros.protein }}g</b><span>Protein</span></div><div class="macro carbs"><b>{{ results().macros.carbs }}g</b><span>Carbs</span></div><div class="macro fat"><b>{{ results().macros.fat }}g</b><span>Fats</span></div></div></div>
+  <div class="section"><div class="section-title"><h3>Explore your options</h3><span>Calories per day</span></div><div class="compare-grid"><div><span>Cutting</span><b>{{ results().comparisons['lose weight'] | number:'1.0-0' }} kcal</b></div><div><span>Maintain</span><b>{{ results().comparisons['maintain weight'] | number:'1.0-0' }} kcal</b></div><div><span>Bulking</span><b>{{ results().comparisons['gain weight'] | number:'1.0-0' }} kcal</b></div></div></div>
+</section>
+
+<section class="secondary-card progress-card" id="progress"><div class="card-title"><div><h2>Weekly progress</h2><p>Log one check-in every week and let the trend guide you.</p></div><span class="count-badge">{{ progress().length }} check-ins</span></div><form (ngSubmit)="addProgress()" class="progress-form"><input type="date" name="progressDate" [(ngModel)]="progressDate" required><input type="number" name="progressWeight" [(ngModel)]="progressWeight" step="0.1" min="1" placeholder="Weight (kg)" required><button type="submit">Add check-in</button></form>
+  @if (progress().length > 1) { <svg viewBox="0 0 300 150" class="chart" role="img" aria-label="Weight progress chart"><line x1="12" y1="132" x2="288" y2="132"/><polyline [attr.points]="chartPoints()"/></svg><div class="chart-labels"><span>Start: {{ progress()[0].weight }} kg</span><span>Latest: {{ progress()[progress().length - 1].weight }} kg</span></div> } @else { <p class="empty">Your progress chart appears after your second check-in.</p> }
+</section>
+
+<section class="secondary-card history-card"><div class="card-title"><div><h2>Calculation history</h2><p>Recent nutrition plans saved on this device.</p></div></div>@if (history().length) { <div class="history-list">@for (item of history(); track item.id) { <div class="history-row"><div><b>{{ item.result.recommendedCalories | number:'1.0-0' }} kcal</b><span>{{ item.data.goal }} | {{ item.data.weight }} kg | {{ item.createdAt | date:'mediumDate' }}</span></div><button (click)="removeHistory(item.id)" aria-label="Remove history entry">Remove</button></div> }</div> } @else { <p class="empty">Your calculations will be saved here.</p> }</section>

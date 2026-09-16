@@ -1,0 +1,49 @@
+<svg width="100%" height="100%" viewBox="0 0 1200 450" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+<defs>
+  <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="450" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#050810"/>
+    <stop offset="55%" stop-color="#0a1220"/>
+    <stop offset="100%" stop-color="#071018"/>
+  </linearGradient>
+  <linearGradient id="dumbbellGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#1a6fc9"/>
+    <stop offset="100%" stop-color="#0d4a8f"/>
+  </linearGradient>
+</defs>
+
+<!-- خلفية الكارت الرئيسية بحجم أكبر وحواف دائرية -->
+<rect x="0" y="0" width="1200" height="450" rx="28" fill="url(#bgGrad)" stroke="#1c3a5e" stroke-width="2"/>
+
+<!-- الأشكال الخلفية المضيئة -->
+<circle cx="1020" cy="120" r="160" fill="#0d1b2a" opacity="0.5"/>
+<circle cx="120" cy="350" r="130" fill="#0d1b2a" opacity="0.4"/>
+
+<!-- أشكال الدنبل اليسارية مع تكبير الحجم والتوسيع -->
+<g transform="translate(200,260) scale(1.6)">
+  <rect x="-6" y="-38" width="12" height="76" rx="4" fill="url(#dumbbellGrad)"/>
+  <rect x="-30" y="-50" width="18" height="100" rx="6" fill="#12335c" stroke="#1c3a5e" stroke-width="1"/>
+  <rect x="-42" y="-38" width="12" height="76" rx="4" fill="#0a1f38" stroke="#1c3a5e" stroke-width="1"/>
+  <rect x="18" y="-50" width="18" height="100" rx="6" fill="#12335c" stroke="#1c3a5e" stroke-width="1"/>
+  <rect x="42" y="-38" width="12" height="76" rx="4" fill="#0a1f38" stroke="#1c3a5e" stroke-width="1"/>
+</g>
+
+<!-- الرسم البياني للأعمدة في المنتصف -->
+<g transform="translate(600,290) scale(1.6)">
+  <rect x="-40" y="-20" width="22" height="20" rx="3" fill="#12335c"/>
+  <rect x="0" y="-45" width="22" height="45" rx="3" fill="#1a6fc9"/>
+  <rect x="40" y="-70" width="22" height="70" rx="3" fill="#12335c"/>
+  <rect x="80" y="-95" width="22" height="95" rx="3" fill="#1a6fc9"/>
+  <line x1="-55" y1="0" x2="115" y2="0" stroke="#1c3a5e" stroke-width="1.5"/>
+</g>
+
+<!-- الدائرة الدائرية لنسبة 70% على اليمين -->
+<g transform="translate(960,250) scale(1.6)">
+  <circle cx="0" cy="0" r="55" fill="none" stroke="#12335c" stroke-width="10"/>
+  <path d="M0 -55 A55 55 0 1 1 -38 39" fill="none" stroke="#1a6fc9" stroke-width="10" stroke-linecap="round"/>
+  <text x="0" y="7" text-anchor="middle" font-size="22" font-weight="600" fill="#e6edf3" font-family="sans-serif">70%</text>
+</g>
+
+<!-- العناوين النصية في الأعلى -->
+<text x="600" y="85" text-anchor="middle" font-size="44" font-weight="600" fill="#ffffff" font-family="'Times New Roman', serif">Gym &amp; calories tracker</text>
+<text x="600" y="125" text-anchor="middle" font-size="22" fill="#7f9bbd" font-family="sans-serif">BMR &amp; TDEE calculator</text>
+</svg>

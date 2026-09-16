@@ -1,0 +1,186 @@
+dialog {
+  background: var(--card, #0d1420);
+  border: 1px solid var(--border, #17263a);
+  border-radius: 14px;
+  padding: 2rem;
+  color: var(--text, #e6edf3);
+  width: 90%;
+  max-width: 420px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+dialog h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+dialog form label {
+  display: block;
+  color: #9db4cc;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+}
+
+dialog form input,
+dialog form select {
+  width: 100%;
+  background-color: #0a0f16;
+  border: 1px solid #1c3a5e;
+  color: #e6edf3;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+dialog form input:focus,
+dialog form select:focus {
+  border-color: #1a6fc9;
+  box-shadow: 0 0 0 3px rgba(26, 111, 201, 0.25);
+}
+
+dialog form select option {
+  background-color: #0a0f16;
+  color: #e6edf3;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  margin-top: 1.8rem;
+}
+
+.actions button {
+  padding: 0.6rem 1.3rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.actions button[type="submit"] {
+  background: linear-gradient(180deg, #1a6fc9, #0d4a8f);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(13, 74, 143, 0.4);
+}
+
+.actions button[type="submit"]:hover {
+  transform: translateY(-2px);
+}
+
+.actions button[type="button"] {
+  background-color: #12203a;
+  color: #9db4cc;
+  border: 1px solid #1c3a5e;
+}
+
+.actions button[type="button"]:hover {
+  background-color: #17263a;
+  color: #e6edf3;
+}.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.2rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  color: #9db4cc;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.form-field input,
+.form-field select {
+  background-color: #0a0f16;
+  border: 1px solid #1c3a5e;
+  color: #e6edf3;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus {
+  border-color: #1a6fc9;
+  box-shadow: 0 0 0 3px rgba(26, 111, 201, 0.25);
+}
+
+.form-field select option {
+  background-color: #0a0f16;
+  color: #e6edf3;
+}
+.calc-btn {
+  /* جعل الزرار في المنتصف وبحجم مناسب */
+  display: block;
+  margin: 24px auto 0 auto;     /* auto من اليمين واليسار لتوسيط الزرار في المنتصف */
+  width: fit-content;           /* يحدد العرض على قد المحتوى */
+  min-width: 200px;             /* حد أدنى للعرض حتى لا يكون صغيراً زيادة عن اللزوم */
+  
+  /* الحجم والمساحة الداخلية */
+  padding: 12px 28px;
+  
+  /* الخلفية والحدود */
+  background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+  color: #ffffff;
+  border: 1px solid rgba(0, 153, 255, 0.4);
+  border-radius: 10px;
+  
+  /* الخط والتنسيق */
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  
+  /* ظلال ناعمة (Glow effect) */
+  box-shadow: 0 4px 15px rgba(0, 102, 255, 0.3);
+  
+  /* حركة التأثيرات */
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+/* تأثير الـ Hover */
+.calc-btn:hover {
+  background: linear-gradient(135deg, #0077ff 0%, #0066ff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 119, 255, 0.5);
+  border-color: #0088ff;
+}
+
+/* عند الضغط */
+.calc-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.4);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'tailwindcss';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #050810;
+  color: #e6edf3;
+  min-height: 100vh;
+}
+
+::selection {
+  background: #1e6fd9;
+  color: #ffffff;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0f16;
+}
+::-webkit-scrollbar-thumb {
+  background: #14559e;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1a6fc9;
+}

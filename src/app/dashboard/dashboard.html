@@ -1,0 +1,13 @@
+<section class="dashboard-shell">
+  <div class="dash-top"><div><p class="dash-kicker">MY FITNESS DASHBOARD</p><h2>@if (profile()) { Welcome back, {{ profile()!.name }} } @else { Build your healthier routine }</h2></div><div class="profile-actions">@if (profile()) { <button class="profile-name" (click)="signOut()">{{ profile()!.name }} · Sign out</button> } @else { <button class="profile-name" (click)="showProfile = true">Create profile</button> }</div></div>
+  <div class="dashboard-grid">
+    <article class="dashboard-stat calories"><span>Calories</span><b>{{ results().recommendedCalories ? (results().recommendedCalories | number:'1.0-0') : '--' }}</b><small>kcal/day</small></article>
+    <article class="dashboard-stat protein"><span>Protein</span><b>{{ results().macros.protein || '--' }}</b><small>grams/day</small></article>
+    <article class="dashboard-stat water"><span>Water</span><b>{{ waterAmount() / 1000 | number:'1.1-1' }}L</b><small>{{ waterGoal }} ml goal</small></article>
+  </div>
+  <div class="dashboard-bottom"><div><p class="dash-kicker">TODAY'S PROGRESS</p><h3>@if (results().recommendedCalories) { {{ userData().weight }} kg · {{ userData().goal }} } @else { Calculate your personal plan to begin }</h3></div><div class="quick-links"><a href="#calculator">Meal plan</a><a href="#progress">Progress</a></div></div>
+</section>
+
+<section class="water-card"><div><p class="dash-kicker">DAILY WATER</p><h2>{{ waterAmount() }} <small>/ {{ waterGoal }} ml</small></h2><div class="water-bar"><span [style.width.%]="waterPercent()"></span></div><p class="water-note">{{ waterPercent() }}% of your daily hydration goal</p></div><div class="water-actions"><button (click)="addWater()">+ 250 ml</button><button class="reset-water" (click)="dashboard.resetWater()">Reset</button></div></section>
+
+@if (showProfile) { <div class="profile-overlay"><form class="profile-dialog" (ngSubmit)="saveProfile()"><button type="button" class="close" (click)="showProfile = false">Close</button><p class="dash-kicker">YOUR PROFILE</p><h2>Save your dashboard</h2><p>This local profile keeps your dashboard personal on this device. Secure login can be connected to a backend later.</p><label>Name<input name="name" [(ngModel)]="name" required placeholder="Your name"></label><label>Email (optional)<input name="email" [(ngModel)]="email" type="email" placeholder="you@email.com"></label><button class="save-profile" type="submit">Continue</button></form></div> }
