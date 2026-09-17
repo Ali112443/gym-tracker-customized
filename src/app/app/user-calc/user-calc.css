@@ -184,3 +184,22 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+@media (max-width: 480px) {
+  dialog {
+    padding: 1.1rem;
+    width: 94%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

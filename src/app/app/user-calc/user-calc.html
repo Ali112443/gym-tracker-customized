@@ -3,9 +3,9 @@
   <h2>Build your nutrition plan</h2>
   <form (ngSubmit)="onSubmit()" #userForm="ngForm">
     <div class="form-grid">
-      <div class="form-field"><label for="age">Age</label><input type="number" id="age" name="age" [(ngModel)]="userData.age" min="14" required /></div>
-      <div class="form-field"><label for="weight">Weight (kg)</label><input type="number" id="weight" name="weight" [(ngModel)]="userData.weight" min="30" step="0.1" required /></div>
-      <div class="form-field"><label for="height">Height (cm)</label><input type="number" id="height" name="height" [(ngModel)]="userData.height" min="120" required /></div>
+      <div class="form-field"><label for="age">Age</label><input type="number" id="age" name="age" [(ngModel)]="userData.age" min="14" placeholder="Enter your age" required /></div>
+      <div class="form-field"><label for="weight">Weight (kg)</label><input type="number" id="weight" name="weight" [(ngModel)]="userData.weight" min="30" step="0.1" placeholder="Enter your weight" required /></div>
+      <div class="form-field"><label for="height">Height (cm)</label><input type="number" id="height" name="height" [(ngModel)]="userData.height" min="120" placeholder="Enter your height" required /></div>
       <div class="form-field"><label for="gender">Gender</label><select id="gender" name="gender" [(ngModel)]="userData.gender"><option value="male">Male</option><option value="female">Female</option></select></div>
       <div class="form-field"><label for="trainingDays">Training days / week</label><input type="number" id="trainingDays" name="trainingDays" [(ngModel)]="userData.trainingDays" min="0" max="7" required /></div>
       <div class="form-field"><label for="workType">Daily work</label><select id="workType" name="workType" [(ngModel)]="userData.workType"><option value="desk">Desk / seated</option><option value="light">On your feet</option><option value="physical">Physical work</option></select></div>
